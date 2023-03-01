@@ -26,11 +26,11 @@ jobs:
         cache: maven
 
     - name: Build Application Jar
-      working-directory: ./spring-boot-3/api-spring-3
+      working-directory: ./api-spring-3
       run: mvn clean package
 
     - name: Docker Compose Build
-      working-directory: ./spring-boot-3
+      working-directory: ./
       run: docker compose up -d --build
       
 
