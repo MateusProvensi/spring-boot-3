@@ -1,0 +1,44 @@
+server:
+  port: 80
+cors:
+  originPatterns: http://localhost:3000,http://localhost:8080,https://provensi.com.br
+file:
+  upload-dir: /udemy-spring/UploadDir
+security:
+  jwt:
+    token:
+      secret-key: 53cr37
+      expire-length: 3600000
+spring:
+  application:
+    #name: api-person
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_boot_tres?useTimezone=true&serverTimezone=UTC 
+    username: root
+    password: 123456789
+  jackson:
+    default-property-inclusion: NON_NULL
+    serialization:
+      fail-on-empty-beans: false
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+
+spring-doc:
+  pathsToMatch: 
+    - /auth/**
+    - /api/**/v1/**
+  swagger-ui:
+    use-root-path: true
+
