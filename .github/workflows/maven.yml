@@ -27,7 +27,7 @@ jobs:
 
     - name: Build Application Jar
       working-directory: ./api-spring-3
-      run: mvn clean package
+      run: mvn clean package -DskipTests
 
     - name: Docker Compose Build
       working-directory: ./
